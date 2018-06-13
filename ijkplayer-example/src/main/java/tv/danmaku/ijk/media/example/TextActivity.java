@@ -39,6 +39,9 @@ public class TextActivity extends AppCompatActivity implements SurfaceHolder.Cal
         ijkMediaPlayer.setOption(IjkMediaPlayer.OPT_CATEGORY_FORMAT, "analyzeduration", "2000000");
         mSurfaceView.getHolder().addCallback(this);
         String mVideoPath = "rtmp://live.hkstv.hk.lxdns.com/live/hks";
+        mVideoPath="rtsp://218.204.223.237:554/live/1/66251FC11353191F/e7ooqwcfbqjoo80j.sdp";
+        mVideoPath="rtsp://218.204.223.237:554/live/1/0547424F573B085C/gsfp90ef4k0a6iap.sdp";
+        mVideoPath="rtsp://184.72.239.149/vod/mp4://BigBuckBunny_175k.mov";
         try {
             ijkMediaPlayer.setDataSource(mVideoPath);
             ijkMediaPlayer.prepareAsync();
@@ -46,7 +49,15 @@ public class TextActivity extends AppCompatActivity implements SurfaceHolder.Cal
         } catch (IOException e) {
             e.printStackTrace();
         }
-
+//        一些视频返回码
+//        int MEDIA_INFO_VIDEO_RENDERING_START = 3;//视频准备渲染
+//        int MEDIA_ERROR_NOT_VALID_FOR_PROGRESSIVE_PLAYBACK = 200;//数据错误没有有效的回收
+//        int MEDIA_INFO_BUFFERING_START = 701;//开始缓冲
+//        int MEDIA_INFO_BUFFERING_END = 702;//缓冲结束
+//        int MEDIA_INFO_VIDEO_ROTATION_CHANGED = 10001;//视频选择信息
+//        int MEDIA_ERROR_SERVER_DIED = 100;//视频中断，一般是视频源异常或者不支持的视频类型。
+//        int MEDIA_ERROR_IJK_PLAYER = -10000,//一般是视频源有问题或者数据格式不支持，比如音频不是AAC之类的
+//        MediaPlayer Error (-10000,0), 视频播放过程中出错了，可能是视频的原因，播放器内部错误
     }
 
 
